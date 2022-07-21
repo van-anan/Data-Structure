@@ -12,7 +12,7 @@ class queue {
     return m_front == -1;
   }
   int size() const {
-    if (m_rear <= m_front) return m_max_size + m_front - m_rear;
+    if (m_rear <= m_front) return m_max_size - m_front + m_rear;
     else {
       if ((m_rear == m_max_size) && (m_front != m)) return m_rear - m_front;
       else {
@@ -107,7 +107,7 @@ void queue::pop() {
   } else {
     throw std::exception("The queue is empty");
   }
-}
+}/*
 int main() {
   queue a;
   a.push(2);
@@ -143,4 +143,4 @@ int main() {
   b = a;
   b.print();
 
-}
+}*/
