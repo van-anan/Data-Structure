@@ -104,7 +104,11 @@ void queue::pop() {
     m_data[m_front] = NULL;
     m_front++;
 
-  } else {
+  }
+  if(m_front==m_max_size){
+    m_front=0;
+  }
+  else {
     throw std::exception("The queue is empty");
   }
 }/*
