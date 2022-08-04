@@ -1,3 +1,4 @@
+#include "Polynom.h"
 std::ostream & operator << (std::ostream & out,const Polynom & other) {
   Polynom::Node * ptr = other.m_head -> m_next;
   while (ptr != other.m_head) {
