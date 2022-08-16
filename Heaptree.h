@@ -89,7 +89,7 @@ void Heap<T>::remove() {
     m_data[1] = m_data[m_size--];
     int left = 1, right = left * 2;
     int Max = std::max(m_data[right], m_data[right + 1]);
-    while (right != m_size && Max > m_data[left]) {
+    while (right <= m_size && Max > m_data[left]) {
         int t = (Max == m_data[right] ? right : right + 1);
         std::swap(m_data[left], m_data[t]);
         left = t;
