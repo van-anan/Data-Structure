@@ -23,7 +23,7 @@ template < typename T >
   };
 template < typename T >
   Stack < T > ::Stack(): m_data(nullptr), m_top(-1), m_max_size(max_size) {
-    m_data = new int[m_max_size];
+    m_data = new T[m_max_size];
   }
 template < typename T >
   Stack < T > ::Stack(const Stack & other) {
@@ -70,7 +70,7 @@ template < typename T >
   void Stack < T > ::push(T element) {
     if (m_top + 1 == m_max_size) {
       m_max_size *= 2;
-      int * tmp = new int[m_max_size];
+      T * tmp = new T[m_max_size];
       for (int i = 0; i < m_top; i++) {
         tmp[i] = m_data[i];
       }
